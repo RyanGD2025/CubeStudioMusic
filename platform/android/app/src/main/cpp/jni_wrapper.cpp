@@ -46,3 +46,23 @@ Java_com_cubemusic_studio_MainActivity_applyReverbToTrack(
         jfloat dryWet) {
             
 }
+
+extern "C" JNIEXPORT jboolean JNICALL
+Java_com_cubemusic_studio_MainActivity_masterProject(
+        JNIEnv* env,
+        jobject,
+        jstring inputPath,
+        jstring outputPath) {
+            
+    if (!g_audioManager) return false;
+
+    const char* input_path_cstr = env->GetStringUTFChars(inputPath, nullptr);
+    const char* output_path_cstr = env->GetStringUTFChars(outputPath, nullptr);
+    
+    bool success = g_audioManager->masterProject(input_path_cstr, output_path_cstr);
+    
+    env->ReleaseStringUTFChars(inputPath, input_path_cstr);
+    env->ReleaseStringUTFChars(outputPath, output_path_cstr);
+
+    return success;
+}
