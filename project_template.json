@@ -1,0 +1,44 @@
+{
+    "projectName": "New Song Title",
+    "bpm": 120.0,
+    "timeSignature": [4, 4],
+    "sampleRate": 48000,
+    "tracks": [
+        {
+            "id": 1,
+            "name": "Drums",
+            "volume": 0.0,
+            "pan": 0.0,
+            "isMuted": false,
+            "clips": [
+                {
+                    "startBar": 1.0,
+                    "endBar": 5.0,
+                    "type": "audio",
+                    "sourceFile": "audio/kick_loop.wav"
+                }
+            ],
+            "fx_chain": [
+                {"name": "Compressor", "params": {"ratio": 4.0, "threshold": -12.0}},
+                {"name": "Reverb", "params": {"size": 0.5, "dry_wet": 0.3}}
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Bassline",
+            "volume": -3.0,
+            "pan": 0.0,
+            "isMuted": false,
+            "clips": [
+                {
+                    "startBar": 1.0,
+                    "endBar": 9.0,
+                    "type": "midi",
+                    "midiData": "base64_encoded_midi_data" 
+                }
+            ],
+            "fx_chain": []
+        }
+    ],
+    "automationData": {}
+}
