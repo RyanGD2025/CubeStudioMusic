@@ -21,6 +21,7 @@ class MainActivity : ComponentActivity() {
         val initialized = initializeAudioEngine(44100, 512)
         if (initialized) {
             startPlayback()
+            
         }
     }
     
@@ -28,4 +29,5 @@ class MainActivity : ComponentActivity() {
     private external fun startPlayback()
     private external fun stopPlayback()
     private external fun applyReverbToTrack(trackId: Int, dryWet: Float)
+    private external fun masterProject(inputPath: String, outputPath: String): Boolean
 }
