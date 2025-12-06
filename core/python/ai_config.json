@@ -1,0 +1,18 @@
+{
+    "mastering_model": {
+        "name": "AdaptiveMasterV2",
+        "path": "models/master_v2.pth",
+        "input_format": "float32",
+        "output_format": "float32"
+    },
+    "stem_separation_model": {
+        "name": "SourceSeparator",
+        "path": "models/sep_v1.h5",
+        "sources": ["vocals", "drums", "bass", "other"]
+    },
+    "midi_generation_model": {
+        "name": "MelodyRNN",
+        "path": "models/melody_rnn.ckpt",
+        "sequence_length": 64
+    }
+}
